@@ -1,0 +1,22 @@
+{
+  "name": "roukmoute/bench-memory",
+  "description": "Analyze the amount of memory allocated of algorithms or programs by placing some “marks” in the code",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mathias STRASSER",
+      "email": "mstrasser@roukmoute.fr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Roukmoute\\BenchMemory\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  }
+}
