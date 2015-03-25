@@ -13,7 +13,7 @@ class BenchMemory implements \Countable, \IteratorAggregate, \ArrayAccess
     public function __construct()
     {
         $this->marks       = [];
-        $this->byteFormats = ['B', 'Kb', 'MB', 'GB', 'TB', 'PB'];
+        $this->byteFormats = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
     }
 
     /**
