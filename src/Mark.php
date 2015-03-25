@@ -5,7 +5,7 @@ namespace Roukmoute\BenchMemory;
 class Mark
 {
     protected $id;
-    protected $start;
+    protected $run;
     protected $stop;
     protected $real_usage;
     protected $running;
@@ -17,9 +17,9 @@ class Mark
         $this->running    = false;
     }
 
-    public function start()
+    public function run()
     {
-        $this->start   = memory_get_usage();
+        $this->run   = memory_get_usage();
         $this->running = true;
     }
 
@@ -38,7 +38,7 @@ class Mark
             $this->stop();
         }
 
-        return $this->stop - $this->start;
+        return $this->stop - $this->run;
     }
 
     public function setRealUsage($real_usage)
