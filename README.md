@@ -4,7 +4,7 @@ Analyze the amount of memory allocated of algorithms or programs by placing some
 ### Example
 
 All we have to do is to place different marks in the code.
-A mark can be started, paused, stopped and reset.
+A mark can be started, stopped and reset.
 
 ```php
 // Creates and initializes variables.
