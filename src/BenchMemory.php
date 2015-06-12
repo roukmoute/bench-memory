@@ -89,44 +89,16 @@ class BenchMemory implements \Countable, \IteratorAggregate, \ArrayAccess
         $this->width = $width;
     }
 
-    /**
-     * (PHP 5 >= 5.0.0)
-     * Retrieve an external iterator
-     * @link http://php.net/manual/en/iteratoraggregate.getiterator.php
-     * @return \Traversable An instance of an object implementing <b>Iterator</b> or
-     * <b>Traversable</b>
-     */
     public function getIterator()
     {
         return new \ArrayIterator($this->marks);
     }
 
-    /**
-     * (PHP 5 >= 5.0.0)
-     * Whether a offset exists
-     * @link http://php.net/manual/en/arrayaccess.offsetexists.php
-     *
-     * @param mixed $offset An offset to check for.
-     *
-     * @return boolean true on success or false on failure.
-     * </p>
-     * <p>
-     * The return value will be casted to boolean if non-boolean was returned.
-     */
     public function offsetExists($offset)
     {
         return isset($this->marks[$offset]) || array_key_exists($offset, $this->marks);
     }
 
-    /**
-     * (PHP 5 >= 5.0.0)
-     * Offset to retrieve
-     * @link http://php.net/manual/en/arrayaccess.offsetget.php
-     *
-     * @param mixed $offset The offset to retrieve.
-     *
-     * @return mixed Can return all value types.
-     */
     public function offsetGet($offset)
     {
         if (isset($this->marks[$offset])) {
@@ -136,16 +108,6 @@ class BenchMemory implements \Countable, \IteratorAggregate, \ArrayAccess
         return null;
     }
 
-    /**
-     * (PHP 5 >= 5.0.0)
-     * Offset to set
-     * @link http://php.net/manual/en/arrayaccess.offsetset.php
-     *
-     * @param mixed $offset The offset to assign the value to.
-     * @param mixed $value  The value to set.
-     *
-     * @return void
-     */
     public function offsetSet($offset, $value)
     {
         if (!isset($offset)) {
@@ -154,15 +116,6 @@ class BenchMemory implements \Countable, \IteratorAggregate, \ArrayAccess
         $this->marks[$offset] = $value;
     }
 
-    /**
-     * (PHP 5 >= 5.0.0)
-     * Offset to unset
-     * @link http://php.net/manual/en/arrayaccess.offsetunset.php
-     *
-     * @param mixed $offset The offset to unset.
-     *
-     * @return void
-     */
     public function offsetUnset($offset)
     {
         if (isset($this->marks[$offset]) || array_key_exists($offset, $this->marks)) {
@@ -170,15 +123,6 @@ class BenchMemory implements \Countable, \IteratorAggregate, \ArrayAccess
         }
     }
 
-    /**
-     * (PHP 5 >= 5.1.0)
-     * Count elements of an object
-     * @link http://php.net/manual/en/countable.count.php
-     * @return int The custom count as an integer.
-     * </p>
-     * <p>
-     * The return value is cast to an integer.
-     */
     public function count()
     {
         return count($this->marks);
